@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Para ti</title>
+<title>Pregunta importante</title>
 
 <style>
 body {
@@ -12,7 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
   overflow: hidden;
   color: white;
 }
@@ -27,14 +27,23 @@ body {
 }
 
 button {
-  margin-top: 20px;
   padding: 12px 25px;
+  margin: 10px;
   border: none;
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.yes {
   background: #ff4b5c;
   color: white;
+}
+
+.no {
+  background: white;
+  color: #ff4b5c;
+  position: absolute;
 }
 
 @keyframes aparecer {
@@ -42,7 +51,7 @@ button {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* corazones flotando */
+/* corazones */
 .corazon {
   position: absolute;
   color: white;
@@ -60,27 +69,27 @@ button {
 <body>
 
 <div class="card">
-  <h1>Tengo algo importante que decirte 💌</h1>
-  <p>Antes de continuar… quiero que sepas que eres muy especial para mí,
-    estos dias a tú lado han sido los mejores, he aprendio lo mucho que es 
-        querer de verdad con el corazón, llevo mucho tiempo planeando 
-        esto tanto asi que no me salio como lo planeado asi que  
-        tuve que utilizar lo que he aprendido, te hice esta paginita para ti para que leyeras esto.
-        ya dale en continuar que tengo una pregunta.... ✨</p>
-  <button onclick="continuar()">Continuar ❤️</button>
+  <h1>¿Quieres ser mi novia Viviana? 💖</h1>
+  <p>Prometo hacerte feliz todos los días ✨</p>
+
+  <button class="yes" onclick="aceptar()">Sí ❤️</button>
+  <button class="no" id="noBtn">No 😢</button>
 </div>
 
-<audio autoplay loop>
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-function continuar() {
-  document.body.style.opacity = "0";
-  setTimeout(() => {
-    window.location.href = "pregunta.html";
-  }, 800);
+function aceptar() {
+  alert("Sabía que dirías que sí 😍");
+  window.location.href = "https://tu-link-final.com";
 }
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
 
 function crearCorazon() {
   const corazon = document.createElement("div");
