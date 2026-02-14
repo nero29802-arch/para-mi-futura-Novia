@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Quieres ser mi novia?</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background: #ff4b5c;
+      color: white;
+    }
+
+    .yes:hover {
+      background: #ff1e40;
+    }
+
+    .no {
+      background: white;
+      color: #ff4b5c;
+      position: relative;
+    }
+
+    .no:hover {
+      transform: translateX(100px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>¿Quieres ser mi novia? 💖</h1>
+    <p>Prometo hacerte sonreír todos los días 😌</p>
+
+    <button class="yes" onclick="aceptar()">Sí 💕</button>
+    <button class="no">No 😢</button>
+  </div>
+
+  <script>
+    function aceptar() {
+      alert("Sabía que dirías que sí 😍");
+      window.location.href = "https://tu-link-aqui.com";
+    }
+  </script>
+
+</body>
+</html>
